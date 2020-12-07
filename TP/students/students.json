@@ -1,0 +1,7 @@
+{
+    "students": [
+        { "id": 1, "name": "Hugo", "grade": 12, "isProjectDone": false, "comment": "Appliqué, sérieux" },
+        { "id": 2, "name": "Noémie", "grade": 18, "isProjectDone": true, "comment": "Brillante et inspirante" },
+        { "id": 3, "name": "Umberto", "grade": 8.5, "isProjectDone": false, "comment": "Elément pertubateur" }
+    ]
+}

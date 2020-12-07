@@ -17,17 +17,42 @@
     </ul>
     -->
 
-    <div>{{ message }}</div>
+    <ion-chip
+      (click)="testPopover()"
+      color="success">Test Popover</ion-chip>
 
+    <div>{{ message }}</div>
+    <div>
+      <span *ngIf="numFastStudent == 0">
+        Aucun étudiant n'a terminé son projet
+      </span>
+      <span *ngIf="numFastStudent > 1">
+        <strong>{{ numFastStudent}} </strong>
+        étudiants ont terminé leur projet
+      </span>
+      <span *ngIf="numFastStudent == 1">
+        <strong>{{ numFastStudent}} </strong>
+        étudiant a terminé son projet
+      </span>
+    </div>
+    
     <ion-list>
       <ion-item *ngFor="let student of students; let i=index">
+        
+        <ion-avatar>
+          <img src="assets/koala.png" [alt]="student.name" />
+        </ion-avatar>
         <ion-label>{{ student.name }}</ion-label>
         <ion-badge [color]="student.grade < 10 ? 'danger' : 'secondary'">
           {{ student.grade }}
         </ion-badge>
         <ion-button slot="start" (click)="onClick(i)" size="small">Click</ion-button>
-        <ion-checkbox [checked]="student.isProjectDone"></ion-checkbox>
-      </ion-item>
+        <ion-checkbox color="secondary" 
+          class="ion-margin-start"
+          (ionChange)="onChange($event, i)"
+          [checked]="student.isProjectDone"></ion-checkbox>
+        <ion-icon name="bicycle"></ion-icon>
+        </ion-item>
     </ion-list>
 
   </div>

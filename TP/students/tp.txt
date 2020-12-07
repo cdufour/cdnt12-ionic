@@ -1,0 +1,22 @@
+*** TP students ***
+Ajouter à l'application demoApp un service "studentService" 
+exposant les méthodes suivantes:
+    findAll() 
+    findById()
+Ces méthodes exécuteront des requêtes HTTP vers un back-end 
+par utilisation du service Angular HttpClient.
+
+On simulera le back-end par utilisaiton du module json-server:
+https://www.npmjs.com/package/json-server
+sur le fichier "students.json"
+
+Les classes HomePage et StudentPage utiliseront ce service
+afin de récuperer:
+- pour HomePage: l'ensemble des étudiants
+- pour StudentPage: un étudiant précis dont on 
+récupère l'id en tant que paramètre d'url
+
+Afficher dans StudentPage les informations détaillées de l'étudiant
+par le biais du composant ionic <ion-card>
+Doc: https://ionicframework.com/docs/api/card
+
