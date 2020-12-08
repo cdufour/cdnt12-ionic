@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title *ngIf="student">{{ student.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label color="danger" *ngIf="hasErrorOccured">
+    Désolé, nous avons rencontré un problème
+  </ion-label>
+
+  <ion-card *ngIf="student">
+    <ion-card-header>
+      <ion-card-subtitle>Etudiant</ion-card-subtitle>
+      <ion-card-title>{{ student.name }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-badge>{{ student.grade }}</ion-badge>
+      {{ student.comment }}
+
+      <ion-item lines="none">
+        Etat du projet: {{ student.isProjectDone ? 'terminé' : 'en cours...' }}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

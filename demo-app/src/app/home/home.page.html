@@ -42,7 +42,8 @@
         <ion-avatar>
           <img src="assets/koala.png" [alt]="student.name" />
         </ion-avatar>
-        <ion-label>{{ student.name }}</ion-label>
+        <ion-label 
+          [routerLink]="'/student/' + student.id">{{ student.name }}</ion-label>
         <ion-badge [color]="student.grade < 10 ? 'danger' : 'secondary'">
           {{ student.grade }}
         </ion-badge>

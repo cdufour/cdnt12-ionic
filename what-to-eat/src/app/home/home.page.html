@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Que manger aujourd'hui ?
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid *ngIf="meals">
+    <ion-row>
+      <ion-col [routerLink]="'/meal/' + meal.idMeal" size="6" *ngFor="let meal of meals">
+        <ion-img [src]="meal.strMealThumb"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
