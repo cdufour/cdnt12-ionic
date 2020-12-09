@@ -7,13 +7,14 @@
 
 <ion-content *ngIf="meal">
   <iframe
+    *ngIf="meal.strYoutube"
     width="100%"
     height="360"
     [src]="getYoutubeUrl(meal)"
   ></iframe>
   <h1>{{ meal.strMeal }}</h1>
   <ion-badge>{{ meal.strCategory }}</ion-badge>
-  <ion-badge color="secondary">{{ meal.strArea }}</ion-badge>
+  <ion-badge [routerLink]="'/area/' + meal.strArea" color="secondary">{{ meal.strArea }}</ion-badge>
   <ion-badge color="tertiary" *ngFor="let tag of tags">{{ tag }}</ion-badge>
 
   <ion-list>

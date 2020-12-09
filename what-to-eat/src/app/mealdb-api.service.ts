@@ -6,8 +6,11 @@ import { map } from 'rxjs/operators';
 
 const API = {
   ROOT: "https://www.themealdb.com/api/json/v1/1/",
-  get FILTER() {
+  get FILTER_CATEGORY() {
     return this.ROOT + "filter.php?c="
+  },
+  get FILTER_AREA() {
+    return this.ROOT + "filter.php?a="
   },
   get LOOKUP() {
     return this.ROOT + "lookup.php?i="
@@ -23,7 +26,15 @@ export class MealdbApiService {
 
   findByCategory(name: string): Observable<MEALDB_ListItem[]> {
     return this.http
-      .get<MEALDB_ListItem[]>(API.FILTER + name)
+      .get<MEALDB_ListItem[]>(API.FILTER_CATEGORY + name)
+      .pipe(
+        map((res: any) => res.meals)
+      )
+  }
+
+  findByArea(name: string): Observable<MEALDB_ListItem[]> {
+    return this.http
+      .get<MEALDB_ListItem[]>(API.FILTER_AREA + name)
       .pipe(
         map((res: any) => res.meals)
       )

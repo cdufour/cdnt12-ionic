@@ -1,0 +1,70 @@
+*** TP VraiFauxApp ***
+
+Application de type Quiz affichant des questions VRAI/FAUX.
+
+Une question:
+- un texte
+- une valeur (vrai ou faux)
+- un texte complémentaire optionnel à afficher pour
+  - fournir la réponse juste lorsque l'utilisateur s'est trompé
+  - fournir une information supplémentaire lorsque l'utilisateur a bien répondu
+- une image optionnelle lorsque l'intitulé de la question porte sur cette image
+- un niveau de difficulté
+- une catégorie
+
+Paramètres initiaux:
+  - nombre de vies: 3
+  - score: 0
+
+Une bonne réponse:
+- augmente le score d'une unité
+- affiche un message de succès
+- affiche, éventuellement, un texte complémentaire
+- affiche un bouton suivant qui permettra de charger/afficher une nouvelle question
+
+Une mauvaise réponse:
+- diminue le nombre de vie d'une unité
+- affiche un message d'erreur
+- indique la bonne réponse
+
+Si le nombre de vies est égal à 0:
+- affiche à l'écran "Score final: xxx" et offre la possibilité de rejouer
+Si l'utilisateur dispose encore d'une vie au moins:
+- affiche un bouton suivant qui permettra de charger/afficher une nouvelle question
+
+
+
+** Fonctionnalités supplémentaires **
+
+1/ Jokers 
+L'application propose l'emploi de jokers (2 par défaut)
+Son utilisation affiche une demande de confirmation
+
+Si l'utilisateur confirme qu'il veut utiliser un joker:
+- affiche la bonne réponse
+- affiche un bouton suivant qui permettra de charger/afficher une nouvelle question
+
+Si l'utilisateur renonce à utiliser le joker:
+ - retour à la question en cours
+
+
+2/ Options de jeu
+L'application propose une section permettant de définir
+  - niveau de difficulté: facile par défaut (autres choix: intermédiaire, difficile, etc...)
+  - thème (catégorie): n'importe par défaut (autres choix: histoire, sport, musique, etc...)
+  - effets: aucun par défaut (autres choix: sons, sons et vibrations)
+
+Remarque:
+  - l'option "sons", jouera un son en fonction du résultat d'une réponse (ex: applaudissements ou huées)
+  - l'option "sons et vibrations" fera la même chose mais fera, en plus, vibrer l'appareil en cas de mauvaise réponse
+
+
+3/ Classement
+Le score + date + pseudo du joueur (demandé en début de partie) sont publiés
+sur un serveur web.
+Une section de l'application permet d'accéder au classement
+
+
+4/ Publication de question
+Une section de l'application permet d'envoyer une proposition de question
+(via un formulaire) à un serveur web afin d'enrichir la base de données de questions

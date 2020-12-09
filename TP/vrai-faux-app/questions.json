@@ -1,0 +1,103 @@
+{
+    "questions": [
+        { 
+            "id": 1, 
+            "title": "La France est un pays d'Afrique", 
+            "correct": false, 
+            "comment": "C'est un pays européen",
+            "level": "Facile",
+            "category": "Géographie"
+        },
+        { 
+            "id": 2, 
+            "title": "La Juventus a remporté 37 scudetti", 
+            "correct": true, 
+            "comment": "",
+            "level": "Facile",
+            "category": "Sport"
+        },
+        { 
+            "id": 3, 
+            "title": "La capitale du Portugal est Porto", 
+            "correct": false, 
+            "comment": "C'est Lisbonne",
+            "level": "Facile",
+            "category": "Géographie"
+        },
+        { 
+            "id": 4, 
+            "title": "Christophe est un prof exceptionnel", 
+            "correct": true, 
+            "comment": "No comment",
+            "level": "Difficile",
+            "category": "Psychologie"
+        },
+        { 
+            "id": 5, 
+            "title": "Angular est un framework PHP", 
+            "correct": false, 
+            "comment": "C'est du JS !!!",
+            "level": "Facile",
+            "category": "Informatique"
+        },
+        { 
+            "id": 6, 
+            "title": "Symfony est un framework PHP", 
+            "correct": true, 
+            "comment": "Développé par Fabien Potencier",
+            "level": "Facile",
+            "category": "Informatique"
+        },
+        { 
+            "id": 7, 
+            "title": "Cobra est un language de programmation", 
+            "correct": false, 
+            "comment": "Python est le reptile le plus proche du développeur",
+            "level": "Moyen",
+            "category": "Informatique"
+        },
+        { 
+            "id": 8, 
+            "title": "Angular est un framework PHP", 
+            "correct": false, 
+            "comment": "C'est du JS !!!",
+            "level": "Facile",
+            "category": "Informatique"
+        },
+        { 
+            "id": 9, 
+            "title": "Del Piero a porté le n°10", 
+            "correct": true, 
+            "comment": "",
+            "level": "Moyen",
+            "category": "Sport",
+            "image": "image9.jpg"
+        },
+        { 
+            "id": 10, 
+            "title": "Suceava est une ville roumaine", 
+            "correct": true, 
+            "comment": "Foarte bine !",
+            "level": "Difficle",
+            "category": "Géographie"
+        },
+        { 
+            "id": 11, 
+            "title": "Ceci est le logo d'Angular", 
+            "correct": true, 
+            "comment": "",
+            "level": "Facile",
+            "category": "Informatique",
+            "image":"image11.png"
+        },
+        { 
+            "id": 12, 
+            "title": "Voici un python", 
+            "correct": false, 
+            "comment": "il s'agit d'un cobra",
+            "level": "Moyen",
+            "category": "Zoologie",
+            "image":"image12.jpg"
+        }
+    ]
+}

@@ -24,8 +24,12 @@ export class MealPage implements OnInit {
     this.mealdb.findById(mealId)
       .subscribe(meal => {
         this.meal = meal;
-        this.tags = meal.strTags.split(',');
-        this.ingredients = this.getIngredients(meal);
+
+        // strTags peut valoir null (exemple: 52995)
+        if (meal.strTags != null)
+          this.tags = meal.strTags.split(',');
+        
+          this.ingredients = this.getIngredients(meal);
       })
   }
 
@@ -40,7 +44,7 @@ export class MealPage implements OnInit {
     let ingredients: string[] = [];
     for (let i=1; i<21; i++) {
       let ingredient = meal["strIngredient" + i];
-      if (ingredient) ingredients.push(ingredient);
+      if (ingredient) ingredients.push(ingredient + ' ' + meal["strMeasure" + i]);
     }
     return ingredients;
   }

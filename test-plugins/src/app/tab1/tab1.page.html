@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Test Geolocation
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item *ngIf="coords">
+    Latitude: {{ coords.latitude }}
+    <br>
+    Longitude: {{ coords.longitude }}
+  </ion-item>
+</ion-content>

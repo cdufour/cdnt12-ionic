@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Test Vibration
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="onClick()">Vibre !</ion-button>
+  <ion-list>
+    <ion-item [href]="'sms:' + u.phone" *ngFor="let u of users">
+      <ion-label>{{ u.name }}</ion-label>
+      <ion-icon name="call"></ion-icon>
+      <ion-label >{{ u.phone }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
