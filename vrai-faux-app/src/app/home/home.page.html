@@ -1,0 +1,60 @@
+<ng-container *ngIf="!questions">
+  <ion-header>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button expand="block" 
+      (click)="startGame()">Jouer</ion-button>
+  </ion-content>
+</ng-container>
+
+<ng-container *ngIf="questions">
+  <ion-header>
+    <ion-toolbar>
+      <ion-label>Score: {{score}}</ion-label>
+      <ion-title>
+        Vrai Faux App
+      </ion-title>
+      <ion-icon *ngFor="let life of lives" slot="end" name="heart"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content id="container" class="ion-padding-top">
+    <p>{{ questionIndex + 1 }} / {{ questions.length }}</p>
+    <h1>{{ questions[questionIndex].title }}</h1>
+
+    <img
+      *ngIf="questions[questionIndex].image" 
+      [src]="imgDir + questions[questionIndex].image" />
+  
+    <div *ngIf="hasAnswered && isCorrectAnswer">
+      <h2 class="good">Bonne réponse !</h2>
+      <h3 class="comment">{{ questions[questionIndex].comment }}</h3>
+    </div>
+
+    <div *ngIf="hasAnswered && !isCorrectAnswer">
+      <h2 class="bad">Mauvaise réponse !</h2>
+      <h3 class="comment">{{ questions[questionIndex].comment }}</h3>
+    </div>
+
+    <div *ngIf="isGameOver">
+      <h2>Game Over</h2>
+      <h3>Score: {{ score }}</h3>
+      <ion-button (click)="initProps()">Rejouer</ion-button>
+    </div>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar *ngIf="!hasAnswered && !isGameOver">
+      <ion-button slot="start" 
+        (click)="giveAnswer(true)">Vrai</ion-button>
+      <ion-button slot="end"
+        color="secondary"
+        (click)="giveAnswer(false)">Faux</ion-button>
+    </ion-toolbar>
+  
+    <ion-toolbar class="center" *ngIf="hasAnswered && !isGameOver">
+      <ion-button 
+        (click)="toNextQuestion()">Suivante</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ng-container>
